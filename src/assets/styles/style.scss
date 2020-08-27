@@ -1,0 +1,25 @@
+.simon{
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: auto;
+  .game{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  .button{
+    box-sizing: border-box;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    &:hover{
+      background-color: #FE4646;
+    }
+  }
+}
