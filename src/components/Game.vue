@@ -37,6 +37,7 @@
         </div>
       </div>
     </div>
+    <audio ref="muz1" src="../assets/mp3/1.ogg"></audio>
   </div>
 </template>
 
@@ -53,11 +54,14 @@ export default {
       secondsInterval: 0,
       round: 1,
       complexity: 'light',
-      sequence: []
+      sequence: [],
+      canClick: false,
+      sequenceToGuess: []
     }
   },
   methods: {
     async start(){
+      this.canClick = false
       switch(this.complexity){
         case 'light':
           this.secondsInterval = 1500
@@ -74,30 +78,49 @@ export default {
         this.flash(el)
         await delay(this.secondsInterval)
       }
+      this.sequenceToGuess = [...this.sequence]
+      this.canClick = true
     },
-    clicked(e){
+
+    async clicked(e){
+      if(!this.canClick) return
       e.target.classList.toggle('active')
-      setTimeout(() => {
-        e.target.classList.toggle('active')
-      }, 200);
+      await delay(300)
+      e.target.classList.toggle('active')
+
+      let expectedPanel = this.sequenceToGuess.shift()
+      if(expectedPanel === e.target){
+        if(this.sequenceToGuess.length === 0){
+          //start new round
+          this.round++
+          this.start()
+          this.sequenceToGuess = [...this.sequence]
+        }
+      }else{
+        alert('game is over')
+        this.round = 1
+        this.sequence = []
+      }
     },
+
     flash(panel){
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           panel.classList.toggle('active')
         }, this.secondsInterval)
-        resolve()
+        setTimeout(() => {
+          resolve()
+        }, 200);
       })
       .then(() => {
         panel.classList.toggle('active')
       })
     },
+    
     sequencePush(){
-      this.sequence.push(this.$refs.button1)
-      this.sequence.push(this.$refs.button2)
-      this.sequence.push(this.$refs.button3)
-      this.sequence.push(this.$refs.button4)
+      this.sequence.push(this.getRandomPanel())
     },
+
     getRandomPanel(){
       const panels = [
         this.$refs.button1,

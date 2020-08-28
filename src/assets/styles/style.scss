@@ -47,7 +47,7 @@ h2{
     background-color: green;
     &:hover{
       cursor: pointer;
-      border: 2px solid black;
+      border: 3px solid black;
     }
     &.active{
       background-color: lightgreen;
@@ -59,7 +59,7 @@ h2{
     background-color: red;
     &:hover{
       cursor: pointer;
-      border: 2px solid black;
+      border: 3px solid black;
     }
     &.active{
       background-color: lightcoral;
@@ -71,7 +71,7 @@ h2{
     background-color: blue;
     &:hover{
       cursor: pointer;
-      border: 2px solid black;
+      border: 3px solid black;
     }
     &.active{
       background-color: lightblue ;
@@ -83,7 +83,7 @@ h2{
     background-color: yellow;
     &:hover{
       cursor: pointer;
-      border: 2px solid black;
+      border: 3px solid black;
     }
     &.active{
       background-color: lightyellow;
