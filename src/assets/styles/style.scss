@@ -46,7 +46,10 @@ h2{
     border-top-left-radius: 100%;
     background-color: green;
     &:hover{
-      background-color: #FE4646;
+      cursor: pointer;
+    }
+    &.active{
+      background-color: lightgreen;
     }
   }
   .button2{
@@ -54,7 +57,10 @@ h2{
     border-top-right-radius: 100%;
     background-color: red;
     &:hover{
-      background-color: #FE4646;
+      cursor: pointer;
+    }
+    &.active{
+      background-color: lightcoral;
     }
   }
   .button3{
@@ -62,7 +68,10 @@ h2{
     border-bottom-left-radius: 100%;
     background-color: blue;
     &:hover{
-      background-color: #FE4646;
+      cursor: pointer;
+    }
+    &.active{
+      background-color: lightblue ;
     }
   }
   .button4{
@@ -70,7 +79,10 @@ h2{
     border-bottom-right-radius: 100%;
     background-color: yellow;
     &:hover{
-      background-color: #FE4646;
+      cursor: pointer;
+    }
+    &.active{
+      background-color: lightyellow;
     }
   }
 }

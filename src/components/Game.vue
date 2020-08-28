@@ -4,12 +4,20 @@
     <div class="game">
       <div class="buttons">
         <div>
-          <div class="button1 mesure"></div>
-          <div class="button2 mesure"></div>
+          <div 
+            class="button1 mesure" 
+            @click="clicked"></div>
+          <div 
+            class="button2 mesure" 
+            @click="clicked"></div>
         </div>
         <div>
-          <div class="button3 mesure"></div>
-          <div class="button4 mesure"></div>
+          <div 
+            class="button3 mesure" 
+            @click="clicked"></div>
+          <div 
+            class="button4 mesure" 
+            @click="clicked"></div>
         </div>
       </div>
       <div class="controllers">
@@ -32,16 +40,30 @@
 import '@/assets/styles/style.scss'
 
 export default {
-  props: ['msg'],
   data(){
     return{
+      secondsInterval: 0,
       round: 1,
-      complexity: ''
+      complexity: 'light'
       }
     },
     methods: {
       start(){
+        switch(this.complexity){
+          case 'light':
+            this.secondsInterval = 1500
+            break
+          case 'normal':
+            this.secondsInterval = 1000
+            break
+          case 'hard':
+            this.secondsInterval = 300
+            break
+        }
         console.log('started')
+      },
+      clicked(e){
+        e.target.classList.toggle('active')
       }
     }
   }

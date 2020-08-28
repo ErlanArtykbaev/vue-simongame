@@ -46,7 +46,10 @@ h2 {
   background-color: green;
 }
 .buttons .button1:hover {
-  background-color: #FE4646;
+  cursor: pointer;
+}
+.buttons .button1.active {
+  background-color: lightgreen;
 }
 .buttons .button2 {
   box-sizing: border-box;
@@ -54,7 +57,10 @@ h2 {
   background-color: red;
 }
 .buttons .button2:hover {
-  background-color: #FE4646;
+  cursor: pointer;
+}
+.buttons .button2.active {
+  background-color: lightcoral;
 }
 .buttons .button3 {
   box-sizing: border-box;
@@ -62,7 +68,10 @@ h2 {
   background-color: blue;
 }
 .buttons .button3:hover {
-  background-color: #FE4646;
+  cursor: pointer;
+}
+.buttons .button3.active {
+  background-color: lightblue;
 }
 .buttons .button4 {
   box-sizing: border-box;
@@ -70,5 +79,8 @@ h2 {
   background-color: yellow;
 }
 .buttons .button4:hover {
-  background-color: #FE4646;
+  cursor: pointer;
+}
+.buttons .button4.active {
+  background-color: lightyellow;
 }

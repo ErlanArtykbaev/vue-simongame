@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Game v-bind:msg="msg" />
+    <Game />
   </div>
 </template>
 
@@ -11,11 +11,6 @@ export default {
   name: 'App',
   components: {
     Game
-  },
-  data(){
-    return{
-      msg: 'hello world'
-    }
   }
 }
 </script>
