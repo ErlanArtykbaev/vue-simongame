@@ -30,7 +30,7 @@
         <div class="radio-buttons">
           <input type="radio" value="light" id="light" checked="true" v-model="complexity">
           <label for="light">Легкий</label>
-          <input type="radio" value="norman" id="normal" v-model="complexity">
+          <input type="radio" value="normal" id="normal" v-model="complexity">
           <label for="normal">Нормальный</label>
           <input type="radio" value="hard" id="hard" v-model="complexity">
           <label for="hard">Сложный</label>
@@ -43,6 +43,10 @@
 <script>
 import '@/assets/styles/style.scss'
 
+const delay = delayed => (
+  new Promise(resolve => setTimeout(resolve, delayed))
+)
+
 export default {
   data(){
     return{
@@ -53,7 +57,7 @@ export default {
     }
   },
   methods: {
-    start(){
+    async start(){
       switch(this.complexity){
         case 'light':
           this.secondsInterval = 1500
@@ -68,6 +72,7 @@ export default {
       this.sequencePush()
       for(const el of this.sequence){
         this.flash(el)
+        await delay(this.secondsInterval)
       }
     },
     clicked(e){
