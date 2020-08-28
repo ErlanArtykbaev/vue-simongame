@@ -1,12 +1,16 @@
 <template>
   <div class="simon">
-    <div>Simon game</div>
+    <h2>Simon game</h2>
     <div class="game">
       <div class="buttons">
-        <div class="button"></div>
-        <div class="button"></div>
-        <div class="button"></div>
-        <div class="button"></div>
+        <div>
+          <div class="button1 mesure"></div>
+          <div class="button2 mesure"></div>
+        </div>
+        <div>
+          <div class="button3 mesure"></div>
+          <div class="button4 mesure"></div>
+        </div>
       </div>
       <div class="controlers">
         <button v-on:click="start">start</button>

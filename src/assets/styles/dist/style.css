@@ -1,3 +1,8 @@
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 .simon {
   display: flex;
   flex-direction: column;
@@ -11,15 +16,45 @@
 
 .buttons {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-.buttons .button {
-  box-sizing: border-box;
-  margin: 20px;
+.buttons > div {
+  display: flex;
+}
+.buttons .mesure {
   width: 200px;
   height: 200px;
+  margin: 2px;
+}
+.buttons .button1 {
+  box-sizing: border-box;
+  border-top-left-radius: 100%;
+  background-color: green;
+}
+.buttons .button1:hover {
+  background-color: #FE4646;
+}
+.buttons .button2 {
+  box-sizing: border-box;
+  border-top-right-radius: 100%;
   background-color: red;
 }
-.buttons .button:hover {
+.buttons .button2:hover {
+  background-color: #FE4646;
+}
+.buttons .button3 {
+  box-sizing: border-box;
+  border-bottom-left-radius: 100%;
+  background-color: blue;
+}
+.buttons .button3:hover {
+  background-color: #FE4646;
+}
+.buttons .button4 {
+  box-sizing: border-box;
+  border-bottom-right-radius: 100%;
+  background-color: yellow;
+}
+.buttons .button4:hover {
   background-color: #FE4646;
 }
