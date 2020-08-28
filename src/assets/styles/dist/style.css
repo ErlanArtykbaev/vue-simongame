@@ -47,6 +47,7 @@ h2 {
 }
 .buttons .button1:hover {
   cursor: pointer;
+  border: 2px solid black;
 }
 .buttons .button1.active {
   background-color: lightgreen;
@@ -58,6 +59,7 @@ h2 {
 }
 .buttons .button2:hover {
   cursor: pointer;
+  border: 2px solid black;
 }
 .buttons .button2.active {
   background-color: lightcoral;
@@ -69,6 +71,7 @@ h2 {
 }
 .buttons .button3:hover {
   cursor: pointer;
+  border: 2px solid black;
 }
 .buttons .button3.active {
   background-color: lightblue;
@@ -80,6 +83,7 @@ h2 {
 }
 .buttons .button4:hover {
   cursor: pointer;
+  border: 2px solid black;
 }
 .buttons .button4.active {
   background-color: lightyellow;

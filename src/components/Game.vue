@@ -5,18 +5,22 @@
       <div class="buttons">
         <div>
           <div 
+            ref="button1"
             class="button1 mesure" 
             @click="clicked"></div>
           <div 
             class="button2 mesure" 
+            ref="button2"
             @click="clicked"></div>
         </div>
         <div>
           <div 
             class="button3 mesure" 
+            ref="button3"
             @click="clicked"></div>
           <div 
             class="button4 mesure" 
+            ref="button4"
             @click="clicked"></div>
         </div>
       </div>
@@ -44,7 +48,8 @@ export default {
     return{
       secondsInterval: 0,
       round: 1,
-      complexity: 'light'
+      complexity: 'light',
+      sequence: [],
       }
     },
     methods: {
@@ -64,6 +69,21 @@ export default {
       },
       clicked(e){
         e.target.classList.toggle('active')
+
+        switch(e.target){
+          case this.$refs.button1:
+            console.log(e.target)
+            break
+          case this.$refs.button2:
+            console.log(e.target)
+            break
+          case this.$refs.button3:
+            console.log(e.target)
+            break
+          case this.$refs.button4:
+            console.log(e.target)
+            break
+        }
       }
     }
   }
