@@ -50,41 +50,49 @@ export default {
       round: 1,
       complexity: 'light',
       sequence: [],
+    }
+  },
+  methods: {
+    start(){
+      switch(this.complexity){
+        case 'light':
+          this.secondsInterval = 1500
+          break
+        case 'normal':
+          this.secondsInterval = 1000
+          break
+        case 'hard':
+          this.secondsInterval = 300
+          break
+      }
+      this.sequencePush()
+      for(const el of this.sequence){
+        this.flash(el)
       }
     },
-    methods: {
-      start(){
-        switch(this.complexity){
-          case 'light':
-            this.secondsInterval = 1500
-            break
-          case 'normal':
-            this.secondsInterval = 1000
-            break
-          case 'hard':
-            this.secondsInterval = 300
-            break
-        }
-        console.log('started')
-      },
-      clicked(e){
+    clicked(e){
+      e.target.classList.toggle('active')
+      setTimeout(() => {
         e.target.classList.toggle('active')
-
-        switch(e.target){
-          case this.$refs.button1:
-            console.log(e.target)
-            break
-          case this.$refs.button2:
-            console.log(e.target)
-            break
-          case this.$refs.button3:
-            console.log(e.target)
-            break
-          case this.$refs.button4:
-            console.log(e.target)
-            break
-        }
-      }
+      }, 200);
+    },
+    flash(panel){
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          panel.classList.toggle('active')
+        }, this.secondsInterval)
+        resolve()
+      })
+      .then(() => {
+        panel.classList.toggle('active')
+      })
+    },
+    sequencePush(){
+      this.sequence.push(this.$refs.button1)
+      this.sequence.push(this.$refs.button2)
+      this.sequence.push(this.$refs.button3)
+      this.sequence.push(this.$refs.button4)
     }
   }
-  </script>
+}
+</script>
