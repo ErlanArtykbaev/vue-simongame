@@ -80,7 +80,6 @@ export default {
       for(const el of this.sequence){
         this.flash(el)
         await delay(this.secondsInterval)
-        console.log(el)
       }
       this.sequenceToGuess = [...this.sequence]
       this.canClick = true
