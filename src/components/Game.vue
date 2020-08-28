@@ -53,7 +53,7 @@ export default {
       secondsInterval: 0,
       round: 1,
       complexity: 'light',
-      sequence: [],
+      sequence: []
     }
   },
   methods: {
@@ -97,6 +97,15 @@ export default {
       this.sequence.push(this.$refs.button2)
       this.sequence.push(this.$refs.button3)
       this.sequence.push(this.$refs.button4)
+    },
+    getRandomPanel(){
+      const panels = [
+        this.$refs.button1,
+        this.$refs.button2,
+        this.$refs.button3,
+        this.$refs.button4
+      ]
+      return panels[parseInt(Math.random() * panels.length)]
     }
   }
 }
